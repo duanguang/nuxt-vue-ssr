@@ -1,0 +1,1 @@
+export {formatDate} from 'hoolinks/date-format';

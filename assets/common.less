@@ -1,0 +1,118 @@
+// 主题颜色
+@bg-color-1: #f0f0f0; // main, 背景颜色
+@bg-color-2: #1a1a1a;
+@bg-color-3: #f5f6f7;
+
+@main-color: #4179f6; // main, 部件、按钮等颜色
+
+// 字体颜色
+@font-color-1: #1a1a1a; // main
+
+// 字体大小
+@font-size-12: 12px;
+@font-size-14: 14px; // main
+@font-size-16: 16px;
+@font-size-18: 18px;
+@font-size-20: 20px;
+@font-size-22: 22px;
+@font-size-24: 24px;
+@font-size-28: 28px;
+@font-size-32: 32px;
+
+// 行高
+@line-height-20: 20px; // main
+@line-height-22: 22px; // main
+@line-height-24: 24px;
+@line-height-26: 26px;
+@line-height-28: 28px;
+@line-height-36: 36px;
+
+// 头部高度
+@header-height: 80px;
+
+// 边距
+@left-right-padding: 92px; // main, 左右边距
+
+// 最小适配宽度
+@min-window-width: 1200px;
+
+// 其他宽度
+@_1100: 1100px;
+@_1200: 1200px;
+@_1300: 1300px;
+
+@font-face {
+  font-family: 'SiYuan-ExtraLight';
+  src: url('//at.alicdn.com/t/webfont_ls5h4l3jidc.eot'); /* IE9*/
+  src: url('//at.alicdn.com/t/webfont_ls5h4l3jidc.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('//at.alicdn.com/t/webfont_ls5h4l3jidc.woff') format('woff'), /* chrome、firefox */
+  url('//at.alicdn.com/t/webfont_ls5h4l3jidc.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+  url('//at.alicdn.com/t/webfont_ls5h4l3jidc.svg#NotoSansHans-DemiLight') format('svg'); /* iOS 4.1- */
+}
+
+html, body{
+  padding: 0px;
+  margin: 0;
+  min-width: @min-window-width;
+}
+body{
+  background: @bg-color-1;
+  font-size: @font-size-14 !important;
+  overflow: auto !important;
+  line-height: @line-height-22;
+  color: #000 !important;
+  box-sizing: border-box;
+  font-family: "SiYuan-ExtraLight"!important;
+}
+ul li{
+  list-style-type: none;
+}
+h1, h2, h3{
+  font-weight: 400;
+}
+a, a:hover, a:active{
+  color: @font-color-1;
+  text-decoration: none!important;
+}
+
+// 按钮
+.btn{
+  padding: 5px 22px;
+  border: 1px solid;
+  border-radius: 2px;
+  outline: none;
+  cursor: pointer;
+  &[type="white"]{
+    background-color: #fff;
+    border-color: @font-color-1;
+    color: @font-color-1;
+  }
+  &[type="blue"]{
+    background-color: @main-color;
+    border-color: @main-color;
+    color: #fff;
+  }
+  &[type="gray"]{
+    background-color: #757575;
+    border-color: #757575;
+  }
+  & + .btn{
+    margin-left: 20px;
+  }
+}
+
+.text-align-right{
+  text-align: right;
+}
+.margin-left-10{
+  margin-left: 10px;
+}
+.margin-left-20{
+  margin-left: 20px;
+}
+.margin-left-30{
+  margin-left: 30px;
+}
+.margin-left-40{
+  margin-left: 40px;
+}

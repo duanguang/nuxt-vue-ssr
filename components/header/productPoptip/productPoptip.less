@@ -1,0 +1,82 @@
+.ivu-poptip{
+  .poptip-content{
+    display: flex;
+    .p-title{
+      font-size: @font-size-16;
+      background-color:#51A2FF;
+      color: #fff;
+      padding: 14px 95px 14px 50px;
+      font-weight: 400;
+    }
+    .p-list{
+      display: flex;
+      flex-flow: row wrap;
+      align-content: flex-start;
+      justify-content: space-between;
+      padding: 0 0 24px 50px;
+      li{
+        margin: 0;
+        width: 40%;
+        margin-top: 28px;
+        height: auto;
+        color: #757575;
+        line-height: @line-height-22;
+        .p-sub-title{
+          font-size: @font-size-16;
+          color: @font-color-1;
+          font-weight:400;
+          margin-bottom: 12px;
+          a{
+            font-weight: inherit;
+            font-size: inherit;
+            color: @font-color-1!important;
+            &:hover{
+              color:#51A2FF!important;
+            }
+          }
+        }
+        a{
+          display: block;
+          height: auto;
+          padding: 0;
+          font-size: @font-size-12;
+          line-height: @line-height-22;
+          color: #757575!important;
+          &:not([href="javascript:;"]):hover{
+            color:#51A2FF!important;
+          }
+          &[href="javascript:;"]{
+            opacity: 0.5;
+          }
+        }
+      }
+    }
+    
+    .p-left{
+      .p-list{
+        li{
+          width: 100%;
+        }
+      }
+    }
+  }
+  .ivu-poptip-popper{
+    .ivu-poptip-content{
+      box-shadow: 0px 0px 21px 0px rgba(0, 0, 0, 0.14);
+      border-radius: 0;
+      background-color: #fff;
+    }
+    .ivu-poptip-body{
+      padding: 0;
+    }
+  }
+}
+.poptipproduct{
+  .ivu-poptip-popper{
+    .ivu-poptip-arrow{
+      &:after{
+        border-bottom-color: #51A2FF!important;
+      }
+    }
+  }
+}
