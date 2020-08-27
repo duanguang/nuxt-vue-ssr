@@ -2,8 +2,9 @@ var webpack = require('webpack')
 const session = require('express-session');
 const nodeExternals = require('webpack-node-externals');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
-function getWebpackPlugin(){
-  if(process.env.NODE_ENV === 'production'){
+
+function getWebpackPlugin() {
+  if (process.env.NODE_ENV === 'production') {
     return [
       new UglifyJsPlugin({
         uglifyOptions: {
@@ -17,12 +18,12 @@ function getWebpackPlugin(){
         }
       })
     ]
- }
- return []
+  }
+  return []
 }
 module.exports = {
   router: {
-    base: '/static/',
+    base: '/',
     scrollBehavior: function (to, from, savedPosition) {
       return {
         x: 0,
@@ -78,13 +79,24 @@ module.exports = {
     'ant-design-vue/dist/antd.css',
     'iview/dist/styles/iview.css',
     // { src: 'iview/src/styles/index.less', lang: 'less' },
-    {src: '~assets/common.less', lang: 'less'},
+    {
+      src: '~assets/common.less',
+      lang: 'less'
+    },
     'swiper/dist/css/swiper.css',
   ],
-  plugins: [
-    {src: '@/plugins/antd.js', ssr: true},
-    {src: '@/plugins/iview.js', ssr: true},
-    {src: '@/plugins/swiper.js', ssr: false},
+  plugins: [{
+      src: '@/plugins/antd.js',
+      ssr: true
+    },
+    {
+      src: '@/plugins/iview.js',
+      ssr: true
+    },
+    {
+      src: '@/plugins/swiper.js',
+      ssr: false
+    },
   ],
   /*
    ** Customize the progress bar color
@@ -96,15 +108,21 @@ module.exports = {
    ** Build configuration
    */
   build: {
-    transpile:['iview'],
-    extractCSS:true,
+    transpile: ['iview'],
+    extractCSS: true,
     filenames: {
-      app: ({ isDev }) => isDev ? '[name].js' : '[name].[chunkhash].js',
+      app: ({
+        isDev
+      }) => isDev ? '[name].js' : '[name].[chunkhash].js',
     },
     babel: {
       plugins: [
-        ["@babel/plugin-proposal-decorators", { "legacy": true }],
-        ["@babel/plugin-proposal-class-properties", { "loose" : true }],
+        ["@babel/plugin-proposal-decorators", {
+          "legacy": true
+        }],
+        ["@babel/plugin-proposal-class-properties", {
+          "loose": true
+        }],
         ["import",
           {
             "libraryName": "ant-design-vue",
@@ -112,10 +130,10 @@ module.exports = {
           },
           "ant-design-vue"
         ],
-        ["import",{
+        ["import", {
           "libraryName": "iview",
           "libraryDirectory": "src/components"
-        },'iview']
+        }, 'iview']
       ]
     },
     extend(config, {
@@ -134,10 +152,18 @@ module.exports = {
     },
     vendor: ['axios'],
     plugins: getWebpackPlugin(),
-    presets({ isServer }) {
-      const targets = isServer ? { node: '9.8.0' } : { ie: '11' }
+    presets({
+      isServer
+    }) {
+      const targets = isServer ? {
+        node: '9.8.0'
+      } : {
+        ie: '11'
+      }
       return [
-        [ require.resolve('@nuxt/babel-preset-app'), { targets } ]
+        [require.resolve('@nuxt/babel-preset-app'), {
+          targets
+        }]
       ]
     }
   },
