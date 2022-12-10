@@ -35,7 +35,7 @@
     "axios": "^0.20.0",
     "babel-polyfill": "^6.23.0",
     "body-parser": "^1.18.3",
-    "express": "^4.16.4",
+    "express": "^4.17.3",
     "express-session": "^1.15.6",
     "hoolinks": "^0.1.5",
     "iview": "^3.5.4",
